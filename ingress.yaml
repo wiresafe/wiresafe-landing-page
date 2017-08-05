@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: public-website
+  namespace: public-website
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: wiresafe-com
+spec:
+  rules:
+  - host: wiresafe.com
+      http:
+        paths:
+        - backend:
+            serviceName: public-website
+            servicePort: http

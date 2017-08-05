@@ -1,44 +1,54 @@
 apiVersion: v1
-kind: Service
+kind: Namespace
 metadata:
-  name: landing-page-service
-spec:
-  type: NodePort
-  selector:
-    app: landing-page
-    tier: backend
-  ports:
-  - port: 80
-    name: http
-    targetPort: 80
+  name: public-website
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: landing-page
+  name: public-website
+  namespace: public-website
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
-        app: landing-page
-        tier: backend
+        app: public-website
     spec:
       containers:
-        - name: landing-page
-          image: gcr.io/wiresafe-project/wiresafe-landing-page
-          ports:
-          - name: http
-            containerPort: 80
+      - name: public-website
+        image: gcr.io/wiresafe-project/public-website
+        ports:
+        - containerPort: 80
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: public-website
+  namespace: public-website
+  labels:
+    app: public-website
+spec:
+  type: NodePort
+  selector:
+    app: public-website
+  ports:
+    - port: 80
+      name: http
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: landing-page
+  name: public-website
+  namespace: public-website
   annotations:
-    kubernetes.io/ingress.class: gce
     kubernetes.io/ingress.global-static-ip-name: wiresafe-com
 spec:
-  backend:
-    serviceName: landing-page-service
-    servicePort: 80
+  rules:
+  - host: wiresafe.com
+    http:
+      paths:
+      - backend:
+          serviceName: public-website
+          servicePort: http
