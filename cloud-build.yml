@@ -17,3 +17,4 @@ steps:
   - 'po'
   - '-l'
   - 'app=public-website'
+  - '--namespace=public-website'
