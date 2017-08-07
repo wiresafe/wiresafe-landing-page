@@ -27,8 +27,8 @@ $config = [];
  * Base configuration
  */
 $config['app_key'] = 'yEN82OcF8Sp0UQn8E40NWzSQYygkKtD1';                            // http://randomkeygen.com/
-$config['base_url'] = 'http://localhost/lifelock/src';                       // without slash at the end
-$config['environment'] = 'production';                                             // development, production, staging
+$config['base_url'] = 'http://wiresafe.com';                       // without slash at the end
+$config['environment'] = 'development';                                             // development, production, staging
 
 /**
  * Core configuration files
