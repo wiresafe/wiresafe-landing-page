@@ -28,7 +28,7 @@ $config = [];
  */
 $config['app_key'] = 'yEN82OcF8Sp0UQn8E40NWzSQYygkKtD1';                            // http://randomkeygen.com/
 $config['base_url'] = 'http://wiresafe.com';                       // without slash at the end
-$config['environment'] = 'development';                                             // development, production, staging
+$config['environment'] = 'production';                                             // development, production, staging
 
 /**
  * Core configuration files
