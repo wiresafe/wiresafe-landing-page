@@ -1,0 +1,208 @@
+.pricing {
+    @include clearfix();
+    padding: rem-calc(55) 0 rem-calc(50);
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(95) 0 rem-calc(40);
+    }
+
+    @include breakpoint(large up) {
+        padding: rem-calc(95) 0 rem-calc(130);
+    }
+
+    h3 {
+        text-align: center;
+        padding-bottom: rem-calc(20);
+    }
+
+    h6 {
+        text-align: center;
+        text-transform: none;
+        font-size: rem-calc(16);
+        line-height: rem-calc(24);
+        color: $color-grey;
+        width: 70%;
+        margin: auto;
+        padding-bottom: rem-calc(40);
+
+        @include breakpoint(medium up) {
+            padding-bottom: 0;
+        }
+    }
+
+
+    aside {
+        border: rem-calc(1) solid darken($color-whiten, 2%);
+        margin: rem-calc(20) 0 0;
+
+        @include breakpoint(medium up) {
+            margin: rem-calc(80) 0 rem-calc(20);
+        }
+
+        header {
+            background: $color-whiten;
+            text-align: center;
+            padding: rem-calc(30);
+
+            h5 {
+                font-weight: $font-weight-bold-light;
+                padding-bottom: rem-calc(15);
+            }
+
+            p {
+                font-size: rem-calc(16);
+                line-height: rem-calc(24);
+            }
+
+            span {
+                display: block;
+                text-align: center;
+                font-weight: $font-weight-bold-light;
+                padding: rem-calc(15) 0 rem-calc(20);
+
+                b {
+                    font-size: rem-calc(36);
+                    color: $color-primary;
+                }
+            }
+
+            a {
+                @include breakpoint(medium only) {
+                    font-size: rem-calc(14);
+                }
+            }
+        }
+
+        section {
+            padding: rem-calc(30);
+            height: auto;
+
+            @include breakpoint(medium up) {
+                height: rem-calc(150);
+            }
+
+            // @include breakpoint(large up) {
+            //     height: rem-calc(150);
+            // }
+
+            strong {
+                display: block;
+                text-align: center;
+                font-weight: $font-weight-bold-light;
+                font-size: rem-calc(14);
+                line-height: rem-calc(22);
+            }
+
+            p {
+                font-size: rem-calc(16);
+                text-align: center;
+                padding: rem-calc(25) 0 rem-calc(15);
+            }
+
+            ol {
+                padding: rem-calc(8) 0;
+            }
+
+            li {
+                font-size: rem-calc(14);
+                position: relative;
+                padding: 0 0 rem-calc(10) rem-calc(20);
+
+                i {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: $color-primary;
+                }
+            }
+        }
+
+        footer {
+            padding: rem-calc(30);
+            text-align: center;
+
+            a {
+                display: inline-block;
+                text-transform: uppercase;
+                font-size: rem-calc(14);
+                font-weight: $font-weight-bold-light;
+                letter-spacing: normal;
+
+                &:hover {
+                    color: $color-secondary;
+                }
+            }
+        }
+
+        &.pricing__hero {
+            header {
+                background: #434d59;
+                background: -moz-linear-gradient(-45deg, #434d59 0%, #52657b 100%);
+                background: -webkit-gradient(left top, right bottom, color-stop(0%, #434d59), color-stop(100%, #52657b));
+                background: -webkit-linear-gradient(-45deg, #434d59 0%, #52657b 100%);
+                background: -o-linear-gradient(-45deg, #434d59 0%, #52657b 100%);
+                background: -ms-linear-gradient(-45deg, #434d59 0%, #52657b 100%);
+                background: linear-gradient(135deg, #434d59 0%, #52657b 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d59', endColorstr='#52657b', GradientType=1 );
+
+                h5 {
+                    color: $color-base-white;
+                }
+
+                p {
+                    color: $color-base-white;
+                }
+
+                span {
+                    color: $color-base-white;
+
+                    b {
+                        color: $color-base-white;
+                    }
+                }
+            }
+        }
+    }
+
+
+    form {
+        @include clearfix();
+        padding-top: rem-calc(20);
+
+        @include breakpoint(medium up) {
+            float: right;
+        }
+
+        input, button {
+            @include breakpoint(medium up) {
+                float: left;
+            }
+        }
+
+        input {
+            width: 100%;
+
+            @include breakpoint(medium up) {
+                width: auto;
+                margin: 0 rem-calc(10) 0 0;
+            }
+        }
+
+        button {
+            width: 100%;
+            margin: rem-calc(10) 0 0;
+
+            @include breakpoint(medium up) {
+                width: auto;
+                margin: 0;
+            }
+        }
+    }
+
+    small {
+        display: block;
+        clear: left;
+        color: $color-grey;
+        padding: rem-calc(40) 0 0;
+    }
+}

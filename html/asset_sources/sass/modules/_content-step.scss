@@ -1,0 +1,102 @@
+.content__step {
+    background: $color-whiten;
+    padding: rem-calc(55) 0 rem-calc(20);
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(100) 0 rem-calc(60);
+    }
+
+    @include breakpoint(large up) {
+        padding: rem-calc(100) 0;
+    }
+
+    h3 {
+        text-align: center;
+        line-height: rem-calc(30);
+        font-size: rem-calc(26);
+        padding-bottom: rem-calc(60);
+    }
+
+    aside {
+        position: relative;
+        height: rem-calc(431);
+        color: $color-base-white;
+        width: rem-calc(280);
+        margin: auto;
+        overflow: hidden;
+        margin-bottom: rem-calc(20);
+
+        @include breakpoint(medium up) {
+            margin-bottom: rem-calc(40);
+        }
+
+        @include breakpoint(large up) {
+            margin-bottom: 0;
+        }
+
+        b {
+            font-size: rem-calc(120);
+            line-height: rem-calc(80);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.2;
+            z-index: 1;
+            font-weight: $font-weight-medium;
+
+        }
+
+        p {
+            position: absolute;
+            left: 0;
+            z-index: 2;
+            text-align: center;
+            padding-left: rem-calc(30);
+            padding-right: rem-calc(30);
+            font-size: rem-calc(16);
+            line-height: rem-calc(22);
+            font-weight: $font-weight-light;
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+        }
+    }
+
+    .content__step__primary {
+        background: $color-primary;
+
+        p {
+            top: 0;
+            padding-top: rem-calc(105);
+        }
+
+        img {
+            bottom: 0;
+        }
+
+        b {
+            top: 0;
+        }
+    }
+
+    .content__step__secondary {
+        background: $color-base-black;
+
+        img {
+            top: 0;
+        }
+
+        p {
+            top: 0;
+            padding-top: rem-calc(255);
+        }
+
+        b {
+            bottom: 0;
+        }
+    }
+}

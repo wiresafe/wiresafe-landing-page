@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700,900');
+// @import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+$font-weight-normal: 400;
+$font-weight-bold: 900;
+$font-weight-bold-light: 700;
+$font-weight-medium: $font-weight-bold-light;
+$font-weight-light: 300;
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: -0.02em;
+
+    @include breakpoint(medium only) {
+        > section {
+            padding-left: rem-calc(10) !important;
+            padding-right: rem-calc(10) !important;
+        }
+    }
+
+    padding-top: rem-calc(120);
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $color-primary;
+    position: relative;
+}
+
+
+a, button, input {
+    outline: none;
+}
+
+small {
+    font-size: rem-calc(12);
+    line-height: rem-calc(18);
+}
+
+.clear {
+    clear: both;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}

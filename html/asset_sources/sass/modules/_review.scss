@@ -1,0 +1,134 @@
+.review {
+    @include clearfix();
+    padding: rem-calc(55) 0 0;
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(95) 0 0;
+    }
+
+    @include breakpoint(medium only) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    h3 {
+        text-align: center;
+        padding-bottom: rem-calc(20);
+    }
+
+    h6 {
+        text-align: center;
+        text-transform: none;
+        font-size: rem-calc(16);
+        line-height: rem-calc(24);
+        color: $color-grey;
+        width: 70%;
+        margin: auto;
+    }
+
+    aside {
+        text-align: center;
+        padding: rem-calc(60) 0;
+
+        p {
+            font-size: rem-calc(24);
+            font-weight: $font-weight-bold-light;
+            padding-bottom: rem-calc(10);
+        }
+
+        i {
+            font-size: rem-calc(30);
+            color: $color-info;
+        }
+
+        span {
+            font-size: rem-calc(14);
+            display: block;
+            text-align: center;
+            padding-top: rem-calc(10);
+        }
+    }
+
+    section {
+        background: $color-whiten;
+        padding: rem-calc(40) rem-calc(30);
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(10);
+        }
+
+        @include breakpoint(medium only) {
+            width: rem-calc(400);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: rem-calc(10);
+        }
+
+        h4 {
+            font-size: rem-calc(18);
+            font-weight: $font-weight-bold-light;
+            padding-bottom: rem-calc(20);
+        }
+
+        p {
+            font-size: rem-calc(14);
+            line-height: rem-calc(28);
+            padding-bottom: rem-calc(20);
+        }
+
+        i {
+            font-size: rem-calc(22);
+            color: $color-info;
+        }
+
+        div {
+            margin-top: rem-calc(40);
+            position: relative;
+            text-align: left;
+            font-size: rem-calc(14);
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include breakpoint(medium up) {
+                width: 70%;
+            }
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 50%;
+            }
+
+            b {
+                padding: rem-calc(5) 0 rem-calc(10) rem-calc(65);
+                display: block;
+                text-transform: uppercase;
+            }
+
+            span {
+                padding: 0 0 0 rem-calc(65);
+                display: block;
+            }
+        }
+    }
+
+    footer {
+        background: $color-primary;
+        text-align: center;
+        color: $color-base-white;
+        padding: rem-calc(150) 0 rem-calc(100);
+        position: relative;
+        z-index: 1;
+        margin-top: rem-calc(-60);
+
+        h3 {
+            padding-bottom: rem-calc(60);
+        }
+    }
+
+}

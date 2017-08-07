@@ -1,0 +1,109 @@
+.review__list {
+    padding: rem-calc(20) 0 rem-calc(50);
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(100) 0;
+    }
+
+    ul {
+        clear: left;
+
+        li {
+            padding-bottom: rem-calc(40);
+
+            aside {
+
+            }
+
+            i {
+                color: $color-primary;
+            }
+
+            blockquote {
+                font-size: rem-calc(16);
+                line-height: rem-calc(24);
+                font-style: italic;
+                padding: rem-calc(15) 0 rem-calc(25);
+            }
+
+            p {
+                text-transform: uppercase;
+                font-weight: $font-weight-bold-light;
+
+                span {
+                    float: right;
+                    text-transform: none;
+                    font-weight: $font-weight-normal;
+                    color: $color-grey;
+                    font-size: rem-calc(12);
+                }
+            }
+        }
+    }
+
+    ol {
+        @include clearfix();
+
+        @include breakpoint(medium up) {
+            float: right;
+        }
+
+        li {
+            float: left;
+            padding-right: rem-calc(10);
+
+            @include breakpoint(medium up) {
+                padding-left: rem-calc(10);
+                padding-right: 0;
+            }
+
+            a {
+                font-size: rem-calc(16);
+                line-height: rem-calc(16);
+                display: block;
+                padding: rem-calc(6) rem-calc(8);
+                background: lighten($color-grey, 35%);
+                border: rem-calc(1) solid lighten($color-grey, 20%);
+                color: $color-primary;
+                font-weight: $font-weight-bold-light;
+
+                &:hover {
+                    background: lighten($color-grey, 30%);
+                }
+            }
+
+            &.active a {
+                background: transparent;
+                border-color: transparent;
+            }
+        }
+    }
+
+    form {
+        color: $color-grey;
+        padding-bottom: rem-calc(20);
+
+        @include breakpoint(medium up) {
+            float: right;
+        }
+
+        label, select {
+            width: 100%;
+            margin-bottom: rem-calc(10);
+
+            @include breakpoint(medium up) {
+                float: left;
+                width: auto;
+                margin-left: rem-calc(10);
+            }
+        }
+
+        label {
+            font-size: rem-calc(14);
+            padding: rem-calc(18) rem-calc(10);
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+    }
+}

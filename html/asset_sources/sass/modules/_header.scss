@@ -1,0 +1,144 @@
+.header {
+    border-top: rem-calc(8) solid $color-primary;
+    position: relative;
+    min-height: rem-calc(120);
+    background: $color-base-white;
+
+    &:before {
+        width: 0;
+        height: 0;
+        border-left: rem-calc(7) solid transparent;
+        border-right: rem-calc(7) solid transparent;
+        border-top: rem-calc(7) solid $color-primary;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        content: "";
+        display: block;
+        transform: translateX(-50%);
+
+        @include breakpoint(large up) {
+            display: none;
+        }
+    }
+
+    &.is--fixed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        background: transparent;
+    }
+
+    &.is--sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        background: $color-base-white;
+    }
+}
+
+.header__logo {
+    background: url('../images/logo/wiretransfer.svg');
+    background-size: cover;
+    width: rem-calc(160);
+    height: rem-calc(48);
+    position: absolute;
+    top: rem-calc(25);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: block;
+    text-indent: -9999px;
+
+    @include breakpoint(medium up) {
+        background-size: cover;
+        width: rem-calc(208);
+        height: rem-calc(63);
+        position: absolute;
+    }
+
+    @include breakpoint(large up) {
+        position: relative;
+        margin-top: rem-calc(25);
+        transform: none;
+        left: auto;
+        top: auto;
+
+        &:before {
+            width: 0;
+            height: 0;
+            border-left: rem-calc(7) solid transparent;
+            border-right: rem-calc(7) solid transparent;
+            border-top: rem-calc(7) solid $color-primary;
+            position: absolute;
+            left: 50%;
+            top: rem-calc(-25);
+            content: "";
+            display: block;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.header__nav__left {
+    padding: rem-calc(48) 0 0;
+    display: none;
+
+    @include breakpoint(large up) {
+        display: block;
+    }
+}
+
+.header__nav__right {
+    float: right;
+    padding: rem-calc(48) 0 0;
+    display: none;
+
+    @include breakpoint(large up) {
+        display: block;
+    }
+}
+
+.header__nav__icon {
+    font-size: rem-calc(18);
+}
+
+.hamburger {
+    margin: rem-calc(25) 0 0 rem-calc(10);
+
+    @include breakpoint(medium up) {
+        margin: rem-calc(35) 0 0 rem-calc(20);
+    }
+
+    @include breakpoint(large up) {
+        display: none;
+    }
+}
+
+.header__nav__mobile {
+    background: $color-primary;
+    text-align: left;
+    margin: rem-calc(20) 0 0;
+    padding: rem-calc(20);
+    display: none;
+    transition: none;
+
+    a {
+        color: $color-base-white;
+        font-size: rem-calc(16);
+        display: block;
+        padding: rem-calc(10) 0;
+    }
+
+    @include breakpoint(medium up) {
+        margin: rem-calc(40) 0 0;
+    }
+
+    @include breakpoint(large up) {
+        display: none;
+    }
+}

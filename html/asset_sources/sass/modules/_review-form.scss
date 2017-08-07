@@ -1,0 +1,13 @@
+.review__form {
+    padding: 0 0 rem-calc(50);
+
+    @include breakpoint(medium up) {
+        padding: 0 0 rem-calc(100);
+    }
+
+    button {
+        @include breakpoint(small only) {
+            width: 100%;
+        }
+    }
+}

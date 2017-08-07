@@ -1,0 +1,133 @@
+.content__grid__video {
+    background: $color-base-black;
+    padding: rem-calc(55) 0 rem-calc(20);
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(95) 0 rem-calc(90);
+    }
+
+    h3 {
+        text-align: center;
+        padding-bottom: rem-calc(20);
+        color: $color-base-white;
+    }
+
+    h6 {
+        text-align: center;
+        text-transform: none;
+        font-size: rem-calc(16);
+        line-height: rem-calc(24);
+        color: $color-grey;
+        width: 70%;
+        margin: auto;
+    }
+
+    aside {
+        text-align: center;
+        padding: rem-calc(60) 0;
+        color: $color-base-white;
+
+        i {
+            font-size: rem-calc(24);
+            color: $color-info;
+        }
+
+        p {
+            font-weight: $font-weight-bold-light;
+            padding: rem-calc(15) 0;
+            font-size: rem-calc(22);
+        }
+    }
+}
+
+.content__grid__video__item {
+    height: rem-calc(240);
+    margin-bottom: rem-calc(10);
+    background-color: $color-secondary;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: block;
+    padding: rem-calc(30);
+
+    @include breakpoint(medium only) {
+        width: rem-calc(400);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &.is--large {
+        @include breakpoint(large up) {
+            height: rem-calc(490);
+            margin-right: rem-calc(10);
+        }
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,0);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+    }
+
+    p, b, i {
+        position: relative;
+        z-index: 2;
+        color: $color-base-white;
+    }
+
+    i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover i {
+        color: $color-primary;
+    }
+
+    &.is--large i {
+        font-size: rem-calc(72);
+    }
+
+    p {
+        font-size: rem-calc(16);
+        line-height: rem-calc(24);
+        font-style: italic;
+        position: absolute;
+        left: rem-calc(30);
+        bottom: rem-calc(55);
+        padding-right: rem-calc(30);
+
+        display: none;
+
+        @include breakpoint(large up) {
+            display: block;
+        }
+    }
+
+    b {
+        position: absolute;
+        left: rem-calc(30);
+        bottom: rem-calc(30);
+        padding-right: rem-calc(30);
+        font-size: rem-calc(14);
+
+        display: none;
+
+        @include breakpoint(large up) {
+            display: block;
+        }
+    }
+
+    i {
+        font-size: rem-calc(52);
+    }
+}

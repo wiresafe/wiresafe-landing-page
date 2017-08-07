@@ -1,0 +1,30 @@
+.nav {
+    ul {
+        @include clearfix();
+    }
+
+    li {
+        float: left;
+        padding-right: rem-calc(45);
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &.has--button {
+            position: relative;
+            top: rem-calc(-9);
+        }
+    }
+
+    a {
+        color: $color-base-black;
+        text-transform: uppercase;
+        font-size: rem-calc(12);
+        letter-spacing: normal;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.button {
+    height: rem-calc(35);
+    line-height: rem-calc(35);
+    padding: 0 rem-calc(18);
+    display: inline-block;
+    background: $color-primary;
+    color: $color-base-white !important;
+    text-transform: uppercase;
+
+    &:hover {
+        background: lighten($color-primary, 5%);
+    }
+
+    &.is--dark {
+        background: $color-base-black;
+
+        &:hover {
+            background: $color-primary;
+        }
+    }
+}
+
+.button__large {
+    @extend .button;
+    font-size: rem-calc(14);
+    letter-spacing: 0.08em;
+    height: rem-calc(60);
+    line-height: rem-calc(60);
+    padding: 0 rem-calc(40);
+    font-weight: $font-weight-bold-light;
+
+    @include breakpoint(medium up) {
+        font-size: rem-calc(18);
+        padding: 0 rem-calc(60);
+    }
+}
+
+.button__large__light {
+    @extend .button__large;
+    background: $color-base-white;
+    color: $color-primary !important;
+
+    &:hover {
+        color: $color-base-white !important;
+        background: $color-secondary;
+    }
+}

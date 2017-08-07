@@ -9,14 +9,6 @@ var _Landing = require('./modules/Landing');
 
 var _Landing2 = _interopRequireDefault(_Landing);
 
-var _Nav = require('./modules/Nav');
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
-var _Faq = require('./modules/Faq');
-
-var _Faq2 = _interopRequireDefault(_Faq);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = window.jQuery = _jquery2.default;
@@ -24,71 +16,9 @@ window.$ = window.jQuery = _jquery2.default;
 
 $(document).ready(function () {
     new _Landing2.default();
-    new _Nav2.default();
-    new _Faq2.default();
 });
 
-},{"./modules/Faq":2,"./modules/Landing":3,"./modules/Nav":4,"jquery":5}],2:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Faq = function () {
-    function Faq() {
-        _classCallCheck(this, Faq);
-
-        this.start();
-    }
-
-    _createClass(Faq, [{
-        key: 'start',
-        value: function start() {
-            this.menuTrigger();
-            this.navTrigger();
-        }
-    }, {
-        key: 'menuTrigger',
-        value: function menuTrigger() {
-            $('html').on('click', '.content__faq ol li h4', function (event) {
-                event.preventDefault();
-
-                // $('.content__faq ol li').removeClass('active');
-                $(this).closest('li').toggleClass('active');
-
-                if ($(this).closest('li').hasClass('active')) {
-                    $(this).closest('li').find('p').show();
-                } else {
-                    $(this).closest('li').find('p').hide();
-                }
-            });
-        }
-    }, {
-        key: 'navTrigger',
-        value: function navTrigger() {
-            $('html').on('click', '.content__faq ul li a', function (event) {
-                event.preventDefault();
-
-                $('.content__faq ul li').removeClass('active');
-                $(this).closest('li').toggleClass('active');
-
-                $('.content__faq section').removeClass('active');
-                $($(this).attr('href')).addClass('active');
-            });
-        }
-    }]);
-
-    return Faq;
-}();
-
-exports.default = Faq;
-
-},{}],3:[function(require,module,exports){
+},{"./modules/Landing":2,"jquery":3}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -137,67 +67,7 @@ var Landing = function () {
 
 exports.default = Landing;
 
-},{}],4:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Nav = function () {
-    function Nav() {
-        _classCallCheck(this, Nav);
-
-        this.start();
-    }
-
-    _createClass(Nav, [{
-        key: 'start',
-        value: function start() {
-            this.mobileNavTrigger();
-            this.goToDiv();
-        }
-    }, {
-        key: 'mobileNavTrigger',
-        value: function mobileNavTrigger() {
-            $('html').on('click', '.hamburger', function (event) {
-                event.preventDefault();
-
-                $(this).toggleClass('is-active');
-                $('.header__nav__mobile').stop().slideToggle();
-            });
-        }
-    }, {
-        key: 'goToDiv',
-        value: function goToDiv() {
-            $('html').on('click', 'a', function (event) {
-                var link = $(this).attr('href');
-                if (link.charAt(0) === '#' && $(link).length > 0) {
-                    event.preventDefault();
-                    $('html,body').animate({ scrollTop: $(link).offset().top - 120 }, 'slow');
-                } else {
-                    if (BASE_URL) {
-                        window.location.href = BASE_URL + link;
-                    }
-                }
-            });
-
-            if (window.location.hash) {
-                $('a[href="' + window.location.hash + '"]').trigger('click');
-            }
-        }
-    }]);
-
-    return Nav;
-}();
-
-exports.default = Nav;
-
-},{}],5:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/

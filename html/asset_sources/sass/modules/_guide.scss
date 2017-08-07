@@ -1,0 +1,122 @@
+.guide {
+    padding: rem-calc(55) 0;
+    text-align: center;
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(95) 0;
+    }
+
+    @include breakpoint(medium only) {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include breakpoint(large up) {
+        text-align: left;
+    }
+
+    h3 {
+        text-align: center;
+        padding-bottom: rem-calc(80);
+    }
+
+    img {
+        @include breakpoint(large up) {
+            float: right;
+            margin-right: rem-calc(20);
+        }
+    }
+
+    p {
+        font-size: rem-calc(14);
+        line-height: rem-calc(28);
+        padding: 0 0 rem-calc(15);
+        color: $color-grey;
+
+        @include breakpoint(small up) {
+            text-align: left;
+        }
+    }
+
+    form {
+        @include clearfix();
+
+        input {
+            float: left;
+            width: 70%;
+        }
+
+        button {
+            float: left;
+            width: 29%;
+            margin-left: 1%;
+            background: $color-primary;
+            border-color: $color-primary;
+            color: $color-base-white;
+
+            &:hover {
+                background: lighten($color-primary, 5%);
+            }
+        }
+    }
+
+    small {
+        display: block;
+        color: $color-grey;
+        padding: rem-calc(15) 0 rem-calc(25);
+
+        @include breakpoint(small up) {
+            text-align: left;
+        }
+    }
+
+    ul {
+        @include clearfix();
+        padding-top: rem-calc(40);
+
+        li {
+            float: left;
+            padding-right: rem-calc(10);
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            a {
+                border-radius: 50%;
+                width: rem-calc(48);
+                height: rem-calc(48);
+                display: block;
+                color: $color-base-white;
+                text-align: center;
+            }
+
+            i {
+                font-size: rem-calc(20);
+                line-height: rem-calc(48);
+            }
+
+            .facebook {
+                background: #3b5998;
+            }
+
+            .twitter {
+                background: #1da1f2;
+            }
+
+            .google {
+                background: #dd4b39;
+            }
+
+            .linkedin {
+                background: #0077b5;
+            }
+
+            .youtube {
+                background: #cd201f;
+            }
+        }
+    }
+
+}

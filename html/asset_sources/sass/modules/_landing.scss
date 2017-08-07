@@ -1,0 +1,408 @@
+/**
+ * Base
+ */
+* {
+    transition: all 250ms ease-in-out;
+}
+
+::-moz-selection {
+    background: $color-primary;
+    color: $color-base-white;
+}
+::selection {
+    background: $color-primary;
+    color: $color-base-white;
+}
+
+.landing {
+    background: url('../images/landing/bg.png') no-repeat $color-base-white;
+    background-position: rem-calc(50) rem-calc(60);
+    color: $color-secondary;
+    letter-spacing: -0.02em;
+
+    @include breakpoint(medium up) {
+       background-position: center center;
+    }
+
+    @include breakpoint(large up) {
+       background-position: 50% rem-calc(150);
+    }
+}
+
+input, button {
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/**
+ * Header
+ */
+.landing__header {
+    .columns {
+        position: relative;
+    }
+
+    margin: rem-calc(25) 0;
+
+    @include breakpoint(medium up) {
+       margin: rem-calc(30) 0;
+    }
+
+    @include breakpoint(large up) {
+       margin: rem-calc(60) 0;
+    }
+}
+
+.landing__header__logo {
+    width: rem-calc(143);
+    margin: auto;
+
+    a {
+        display: inline-block;
+    }
+
+    @include breakpoint(medium up) {
+       margin: 0 0 0 rem-calc(50);
+    }
+
+    .is--menu--open & {
+        visibility: hidden;
+    }
+}
+
+.landing__header__hamburger {
+    color: $color-secondary;
+    font-size: rem-calc(24);
+    position: absolute;
+    left: rem-calc(30);
+    top: rem-calc(10);
+
+    @include breakpoint(large up) {
+       left: rem-calc(10);
+    }
+
+    .is--menu--open & {
+        visibility: hidden;
+    }
+}
+
+.landing__header__nav {
+    float: right;
+    @include clearfix();
+    display: none;
+
+    @include breakpoint(medium up) {
+        display: block;
+    }
+
+    li {
+        float: left;
+        padding: rem-calc(11) rem-calc(25) rem-calc(11) 0;
+
+        @include breakpoint(large up) {
+            padding: rem-calc(11) rem-calc(35) rem-calc(11) 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    a {
+        font-size: rem-calc(14);
+    }
+}
+
+.landing__header__nav--button {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+/**
+ * Hero
+ */
+.landing__hero {
+    text-align: center;
+    padding: rem-calc(60) 0;
+    max-width: rem-calc(380);
+    margin: auto;
+
+    @include breakpoint(medium up) {
+        max-width: none;
+        padding: rem-calc(120) 0;
+    }
+
+    @include breakpoint(large up) {
+        padding: rem-calc(80) 0;
+    }
+
+    .is--menu--open & {
+        filter: blur(rem-calc(2));
+    }
+}
+
+.landing__hero__primary__text {
+    font-size: rem-calc(29);
+    line-height: rem-calc(32);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+
+    span {
+        color: $color-primary;
+    }
+
+    @include breakpoint(medium up) {
+        font-size: rem-calc(42);
+        line-height: rem-calc(56);
+        letter-spacing: -0.04em;
+    }
+
+    @include breakpoint(large up) {
+        font-size: rem-calc(50);
+        line-height: rem-calc(56);
+        letter-spacing: -0.04em;
+        padding-bottom: rem-calc(10);
+    }
+}
+
+.landing__hero__secondary__text {
+    font-size: rem-calc(16);
+    font-weight: $font-weight-bold-light;
+    padding: rem-calc(15) 0 rem-calc(25);
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(5) 0 rem-calc(25);
+        font-size: rem-calc(24);
+        line-height: rem-calc(32);
+        letter-spacing: -0.04em;
+    }
+}
+
+.landing__hero__tertiary__text {
+    font-size: rem-calc(14);
+    line-height: rem-calc(22);
+
+    @include breakpoint(medium up) {
+        width: rem-calc(500);
+        margin: auto;
+    }
+}
+
+
+/**
+ * Form
+ */
+::-webkit-input-placeholder {
+  color: $color-grey;
+}
+
+::-moz-placeholder {
+  color: $color-grey;
+}
+
+:-ms-input-placeholder {
+  color: $color-grey;
+}
+
+:-moz-placeholder {
+    color: $color-grey;
+}
+
+.landing__form {
+    width: rem-calc(280);
+    margin: auto;
+
+    @include breakpoint(medium up) {
+        width: rem-calc(375);
+    }
+}
+
+.landing__form__field__input {
+    width: 100%;
+    border-radius: $border-radius;
+    text-align: center;
+    border: rem-calc(1) solid $color-grey;
+    background: $color-base-white;
+    height: rem-calc(45);
+    font-size: rem-calc(14);
+}
+
+.landing__form__field {
+    padding: 0 0 rem-calc(10);
+}
+
+/**
+ * Button
+ */
+.landing__button {
+    height: rem-calc(45);
+    font-size: rem-calc(14);
+    text-transform: uppercase;
+    color: $color-base-white;
+    background: $color-primary;
+    border-radius: $border-radius;
+    width: 100%;
+    font-weight: $font-weight-bold-light;
+    display: block;
+    text-align: center;
+    line-height: rem-calc(45);
+    cursor: pointer;
+
+    &:hover {
+        background: $color-secondary;
+    }
+}
+
+.landing__button--outline {
+    display: block;
+    text-align: center;
+    line-height: rem-calc(35);
+    border-radius: rem-calc(25);
+    background: $color-base-white;
+    border: rem-calc(1) solid $color-primary;
+    padding: 0 rem-calc(40);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold-light;
+
+    &:hover {
+        background: $color-primary;
+        color: $color-base-white;
+    }
+}
+
+/**
+ * Footer
+ */
+
+.landing__footer {
+    text-align: center;
+    padding: 0 rem-calc(20);
+
+    @include breakpoint(medium up) {
+        text-align: left;
+        padding: rem-calc(320) rem-calc(20) rem-calc(50);
+    }
+
+    @include breakpoint(large up) {
+        padding: rem-calc(170) rem-calc(20) rem-calc(50);
+    }
+}
+
+.landing__footer__nav {
+    padding: rem-calc(60) 0 rem-calc(20);
+
+    li {
+        display: inline-block;
+        padding: 0 rem-calc(7);
+    }
+
+    a {
+        font-size: rem-calc(14);
+        color: $color-grey;
+    }
+
+    @include breakpoint(medium up) {
+        padding-top: 0;
+        float: right;
+    }
+}
+
+.landing__footer__claim {
+    font-size: rem-calc(14);
+    color: $color-grey;
+    padding: 0 0 rem-calc(30);
+
+    a {
+        font-weight: $font-weight-bold-light;
+    }
+}
+
+
+/**
+ * Overlay
+ */
+
+.landing__menu__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba($color-base-white, 0.9);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    .is--menu--open & {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.landing__menu__overlay__content__close {
+    position: absolute;
+    color: $color-secondary;
+    font-size: rem-calc(24);
+    position: absolute;
+    left: rem-calc(32);
+    top: rem-calc(11);
+
+    @include breakpoint(medium up) {
+        font-size: rem-calc(26);
+        left: rem-calc(32);
+        top: rem-calc(38);
+    }
+
+    @include breakpoint(large up) {
+        left: rem-calc(11);
+        top: rem-calc(8);
+    }
+}
+
+.landing__menu__overlay__content__list {
+    width: 100%;
+    padding: rem-calc(100) rem-calc(30);
+    text-align: center;
+
+    a {
+        font-size: rem-calc(26);
+        color: $color-primary;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        padding: rem-calc(5) 0;
+        display: block;
+
+        @include breakpoint(medium up) {
+           font-size: rem-calc(32);
+        }
+
+        @include breakpoint(large up) {
+           font-size: rem-calc(42);
+           padding: rem-calc(10) 0;
+        }
+    }
+}
+
+.landing__menu__overlay__content__logo {
+    width: rem-calc(143);
+    margin: rem-calc(25) auto 0;
+
+    a {
+        display: inline-block;
+    }
+
+    @include breakpoint(medium up) {
+       margin: rem-calc(30) 0 0 rem-calc(70);
+    }
+
+    @include breakpoint(large up) {
+       margin: rem-calc(60) 0 0 rem-calc(60);
+    }
+}
+
+.landing__menu__overlay__content {
+    max-width: rem-calc(1200);
+    margin: auto;
+    position: relative;
+}

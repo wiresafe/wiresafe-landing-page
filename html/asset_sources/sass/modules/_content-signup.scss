@@ -1,0 +1,52 @@
+.content__signup {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    color: $color-base-white;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: rem-calc(100) rem-calc(20);
+
+    @include breakpoint(large up) {
+        padding: rem-calc(100) 0;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        background: rgba($color-base-black, 0.8);
+    }
+
+    img {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        max-width: none;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint(large up) {
+            // height: auto;
+            // width: 100%;
+            // max-width: 100%;
+        }
+    }
+
+    h3 {
+        position: relative;
+        z-index: 3;
+        padding-bottom: rem-calc(50);
+    }
+
+    a {
+        position: relative;
+        z-index: 3;
+    }
+}

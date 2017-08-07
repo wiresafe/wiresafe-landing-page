@@ -1,0 +1,134 @@
+.content__flow {
+    .content__flow__nav {
+        padding: rem-calc(35) 0;
+        border-top: rem-calc(1) solid rgba($color-grey, 0.2);
+        border-bottom: rem-calc(1) solid rgba($color-grey, 0.2);
+
+        ul {
+            @include clearfix();
+        }
+
+        li {
+            float: left;
+            width: 100%;
+            margin: 0 auto rem-calc(15);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include breakpoint(large up) {
+                width: 20%;
+                text-align: center;
+            }
+        }
+
+        a {
+            display: block;
+            font-size: rem-calc(18);
+            font-weight: $font-weight-bold-light;
+            text-transform: uppercase;
+        }
+
+        b {
+            width: rem-calc(40);
+            height: rem-calc(40);
+            border-radius: 50%;
+            border: rem-calc(1) solid $color-primary;
+            line-height: rem-calc(40);
+            text-align: center;
+            font-size: rem-calc(18);
+            font-weight: $font-weight-bold-light;
+            color: $color-primary;
+            display: inline-block;
+        }
+
+        span {
+            display: inline-block;
+            padding: 0 rem-calc(8);
+            color: $color-base-black;
+        }
+    }
+
+    .content__flow__item {
+        margin: rem-calc(20) 0 0;
+
+        @include breakpoint(large up) {
+            background: url('../images/works/arrows.jpg') no-repeat center center;
+            margin: rem-calc(50) 0;
+        }
+
+        ul {
+
+        }
+
+        li {
+            position: relative;
+            margin: rem-calc(20) 0;
+            width: 100%;
+
+            @include breakpoint(large up) {
+                height: rem-calc(475);
+                margin: rem-calc(47) 0;
+            }
+
+            > div {
+                padding: rem-calc(30) 0;
+
+                @include breakpoint(large up) {
+                    width: rem-calc(550);
+                    padding: rem-calc(130) 0;
+                }
+            }
+        }
+
+        img {
+            display: block;
+            border-radius: 50%;
+            width: rem-calc(220);
+            height: rem-calc(220);
+            margin: auto;
+
+            @include breakpoint(large up) {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: rem-calc(475);
+                height: rem-calc(475);
+            }
+        }
+
+        span {
+            font-size: rem-calc(18);
+            font-weight: $font-weight-bold-light;
+            color: $color-primary;
+            display: block;
+        }
+
+        h3 {
+            padding: rem-calc(15) 0 rem-calc(25);
+        }
+
+        p {
+            font-size: rem-calc(14);
+            line-height: rem-calc(24);
+        }
+
+        li:nth-child(odd) {
+            > div {
+                @include breakpoint(large up) {
+                    float: right;
+                }
+            }
+        }
+
+        li:nth-child(even) {
+            img {
+                @include breakpoint(large up){
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

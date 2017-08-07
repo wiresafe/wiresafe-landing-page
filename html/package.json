@@ -1,0 +1,42 @@
+{
+  "name": "lifelock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://im4aLL@bitbucket.org/im4aLL/lifelock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/im4aLL/lifelock#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.12",
+    "browserify": "^14.4.0",
+    "browserify-shim": "^3.8.14",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "imagemin-pngquant": "^5.0.0",
+    "jshint": "^2.9.4",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.3.1",
+    "hamburgers": "^0.9.1",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4"
+  }
+}

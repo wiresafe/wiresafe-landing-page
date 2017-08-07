@@ -1,0 +1,156 @@
+::-webkit-input-placeholder {
+  color: $color-grey;
+  font-weight: $font-weight-light;
+}
+
+::-moz-placeholder {
+  color: $color-grey;
+  font-weight: $font-weight-light;
+}
+
+:-ms-input-placeholder {
+  color: $color-grey;
+  font-weight: $font-weight-light;
+}
+
+:-moz-placeholder {
+    color: $color-grey;
+    font-weight: $font-weight-light;
+}
+
+input {
+    height: rem-calc(50);
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
+    font-size: rem-calc(14);
+    border: rem-calc(1) solid rgba($color-grey, 0.2);
+}
+
+button {
+    height: rem-calc(50);
+    background: $color-whiten;
+    border: rem-calc(1) solid rgba($color-grey, 0.2);
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
+    font-size: rem-calc(14);
+    text-transform: uppercase;
+
+    &:hover {
+        background: rgba($color-grey, 0.2);
+        cursor: pointer;
+    }
+}
+
+select {
+    transition: none;
+
+    /* styling */
+    background-color: white;
+    border: thin solid lighten($color-grey, 20%);
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.75em 3.5em 0.75em 1em;
+
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, lighten($color-grey, 30%), lighten($color-grey, 30%));
+    background-position:
+    calc(100% - 20px) calc(1em + 6px),
+    calc(100% - 15px) calc(1em + 6px),
+    calc(100% - 2.5em) 0.7em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+
+    &:focus {
+        background-image:
+        linear-gradient(45deg, $color-grey 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, $color-grey 50%),
+        linear-gradient(to right, #ccc, #ccc);
+        background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+        background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+        background-repeat: no-repeat;
+        border-color: $color-grey;
+        outline: 0;
+    }
+}
+
+
+.form {
+    padding-top: rem-calc(40);
+
+    input, select, textarea {
+        width: 100%;
+        border: thin solid lighten($color-grey, 20%);
+        margin-bottom: rem-calc(20);
+        font-family: 'Fira Sans', sans-serif;
+        font-size: rem-calc(16);
+        font-weight: $font-weight-medium;
+        text-transform: uppercase;
+    }
+
+    textarea {
+        padding: rem-calc(20);
+    }
+}
+
+.form__material {
+    label {
+        display: block;
+        font-weight: $font-weight-light;
+        font-size: rem-calc(14);
+    }
+
+    input {
+        border: none;
+        border-bottom: rem-calc(1) solid #8d8d8d;
+        height: rem-calc(45);
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        margin-bottom: rem-calc(30);
+        font-size: rem-calc(14);
+        line-height: rem-calc(18);
+    }
+
+    textarea {
+        border: rem-calc(1) solid #8d8d8d;
+        resize: vertical;
+        width: 100%;
+        height: rem-calc(200);
+        outline: none;
+        margin-top: rem-calc(15);
+        display: block;
+        padding: rem-calc(15);
+        font-size: rem-calc(14);
+        line-height: rem-calc(18);
+    }
+
+    .button {
+        margin-top: rem-calc(20);
+    }
+
+    h3 {
+        padding-bottom: rem-calc(40);
+    }
+}

@@ -1,0 +1,63 @@
+.content__guarantee {
+    background: url('../images/guarantee/bg.jpg') no-repeat center center;
+    background-size: cover;
+    padding: rem-calc(55) 0;
+    color: $color-base-white;
+    text-align: center;
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(100) 0;
+    }
+
+    h3 {
+        padding-bottom: rem-calc(20);
+    }
+
+    p {
+        font-size: rem-calc(16);
+        line-height: rem-calc(24);
+        padding-bottom: rem-calc(50);
+        font-weight: $font-weight-light;
+    }
+
+    h3, p {
+        max-width: rem-calc(800);
+        margin: auto;
+    }
+
+    img {
+
+    }
+
+    h4 {
+        font-size: rem-calc(32);
+        font-weight: $font-weight-medium;
+        padding: rem-calc(35) 0 rem-calc(20);
+    }
+
+    mark {
+        font-size: rem-calc(16);
+        line-height: rem-calc(24);
+        background: transparent;
+        color: $color-base-white;
+        max-width: rem-calc(480);
+        margin: auto;
+        display: block;
+        font-weight: $font-weight-light;
+    }
+
+    small {
+        position: relative;
+        padding-left: rem-calc(25);
+        display: block;
+        margin: rem-calc(50) 0 0;
+        text-align: left;
+        opacity: 0.7;
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+.content__list {
+    padding: rem-calc(80) 0 0 !important;
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(150) 0 0 !important;
+    }
+
+    &.is--right {
+        padding: 0 !important;
+    }
+
+    h4 {
+        font-size: rem-calc(24);
+        font-weight: $font-weight-bold-light;
+        padding: rem-calc(40) rem-calc(30) rem-calc(30);
+
+        @include breakpoint(medium up) {
+            padding-bottom: rem-calc(20);
+            padding-left: rem-calc(60);
+            padding-top: rem-calc(70);
+            padding-right: rem-calc(60);
+        }
+    }
+
+    p {
+        font-size: rem-calc(14);
+        line-height: rem-calc(24);
+        padding-bottom: rem-calc(40);
+        padding-left: rem-calc(30);
+        padding-right: rem-calc(30);
+
+        @include breakpoint(medium up) {
+            padding-bottom: rem-calc(60);
+            padding-left: rem-calc(60);
+            padding-right: rem-calc(60);
+        }
+    }
+
+    ul {
+        @include clearfix();
+        margin-left: rem-calc(30);
+        margin-right: rem-calc(30);
+
+        @include breakpoint(medium up) {
+            margin-left: rem-calc(60);
+            margin-right: rem-calc(60);
+        }
+    }
+
+    li {
+        float: left;
+        width: 100%;
+        position: relative;
+        padding-bottom: rem-calc(40);
+        min-height: rem-calc(120);
+
+        @include breakpoint(medium up) {
+            width: 50%;
+        }
+
+        i {
+            font-size: rem-calc(32);
+            color: $color-primary;
+            position: static;
+            left: 0;
+            top: 0;
+            margin-bottom: rem-calc(10);
+
+            @include breakpoint(medium up) {
+                position: absolute;
+                margin-bottom: 0;
+            }
+        }
+
+        h5 {
+            font-size: rem-calc(18);
+            padding-bottom: rem-calc(15);
+            font-weight: $font-weight-bold-light;
+
+            @include breakpoint(medium up) {
+                padding-left: rem-calc(55);
+            }
+        }
+
+        p {
+            padding-bottom: 0;
+            padding-right: 0;
+            padding-left: 0;
+
+            @include breakpoint(medium up) {
+                padding-left: rem-calc(55);
+                padding-right: rem-calc(20);
+            }
+        }
+    }
+}
