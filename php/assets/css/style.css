@@ -4829,8 +4829,16 @@ select {
         font-size: 2.5rem; } }
   .thank__you p {
     font-size: 1.125rem;
-    line-height: 1.375rem;
+    line-height: 1.625rem;
     padding-bottom: 2.8125rem; }
     @media screen and (min-width: 40em) {
       .thank__you p {
         font-size: 1.5rem; } }
+
+.errors {
+  padding: 1.25rem 1.25rem 1.0625rem;
+  border: 0.0625rem solid #ab0101;
+  color: #ab0101;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  margin-bottom: 2.5rem; }

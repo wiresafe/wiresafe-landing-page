@@ -179,8 +179,16 @@ var Nav = function () {
                 if (link.charAt(0) === '#' && $(link).length > 0) {
                     event.preventDefault();
                     $('html,body').animate({ scrollTop: $(link).offset().top - 120 }, 'slow');
+                } else {
+                    if (BASE_URL) {
+                        window.location.href = BASE_URL + link;
+                    }
                 }
             });
+
+            if (window.location.hash) {
+                $('a[href="' + window.location.hash + '"]').trigger('click');
+            }
         }
     }]);
 
