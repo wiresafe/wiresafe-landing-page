@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: public-website
-        image: gcr.io/wiresafe-project/public-website
+        image: gcr.io/wiresafe-project/public-website:latest
         ports:
         - containerPort: 80
           name: http

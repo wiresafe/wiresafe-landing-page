@@ -1,0 +1,16 @@
+# expose the website
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: wordpress
+  name: wordpress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: wiresafe-com
+spec:
+  rules:
+  - host: wiresafe.com
+    http:
+      paths:
+      - backend:
+          serviceName: wordpress
+          servicePort: 80

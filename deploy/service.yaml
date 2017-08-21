@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: wordpress
+  name: wordpress
+spec:
+  type: LoadBalancer
+  selector:
+    app: wordpress
+  ports:
+  - port: 80
+    name: http
+    targetPort: 80
+  externalName: wiresafe.com
