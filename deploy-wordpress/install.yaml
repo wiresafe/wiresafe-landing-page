@@ -1,0 +1,83 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: wordpress
+---
+# Request a persistent volume from the cluster using a Persistent Volume Claim.
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: wordpress
+  name: wordpress-data
+  annotations:
+    volume.alpha.kubernetes.io/storage-class: default
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 5Gi
+---
+# Request a persistent volume from the cluster using a Persistent Volume Claim.
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: wordpress
+  name: mysql-data
+  annotations:
+    volume.alpha.kubernetes.io/storage-class: default
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: wordpress
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  containers:
+    - image: launcher.gcr.io/google/wordpress4-php5-apache
+      name: wordpress
+      env:
+        - name: "WORDPRESS_DB_HOST"
+          value: "127.0.0.1:3306"
+        - name: "WORDPRESS_DB_PASSWORD"
+          value: "example-password"
+      volumeMounts:
+        - name: wordpress-data
+          mountPath: /var/www/html
+          subPath: wp
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      readinessProbe:
+        httpGet:
+          path: /license.txt
+          port: 80
+        periodSeconds: 1
+        timeoutSeconds: 1
+        successThreshold: 1
+        failureThreshold: 10
+    - image: launcher.gcr.io/google/mysql5
+      name: mysql
+      env:
+        - name: "MYSQL_ROOT_PASSWORD"
+          value: "example-password"
+      volumeMounts:
+        - name: mysql-data
+          mountPath: /var/lib/mysql
+          subPath: db
+      ports:
+        - containerPort: 3306
+          protocol: TCP
+  volumes:
+    - name: wordpress-data
+      persistentVolumeClaim:
+        claimName: wordpress-data
+    - name: mysql-data
+      persistentVolumeClaim:
+        claimName: mysql-data

@@ -20,7 +20,11 @@ spec:
         image: gcr.io/wiresafe-project/public-website:latest
         ports:
         - containerPort: 80
-          name: http
+          name: www
+        readinessProbe:
+          httpGet:
+            port: 80
+            path: /
 ---
 apiVersion: v1
 kind: Service
@@ -35,15 +39,14 @@ spec:
     app: public-website
   ports:
     - port: 80
-      name: http
+      targetPort: 80
+      protocol: TCP
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: public-website
   namespace: public-website
-  annotations:
-    kubernetes.io/ingress.global-static-ip-name: wiresafe-com
 spec:
   rules:
   - host: wiresafe.com
@@ -51,4 +54,4 @@ spec:
       paths:
       - backend:
           serviceName: public-website
-          servicePort: http
+          servicePort: 80
